@@ -49,6 +49,12 @@ $$H(y) = -\sum_{y \in \textrm{values}(Y)} P(y)\log_2 P(y) $$
 
 Conditional Entropy:
 
+$$H(Y|X) = \sum_x P(X=x)H(Y|X=x)$$
+
+where
+
+$$H(Y|X=x) = -\sum_y P(Y=y | X=x) \log_2 P(Y=y | X=x)$$
+
 ![](./images/conditional_entropy.png)
 
 Information Gain: Defined as Entropy minus the Condiditonal Entropy
@@ -56,3 +62,5 @@ Information Gain: Defined as Entropy minus the Condiditonal Entropy
 $$\textrm{InfoGain}(D,S) = H_D(Y) - H_D(Y|S)$$
 
 - By using information gain, we remove the influence of contitional entropy, so we can truly answer the question: does the split decrease the total entropy?
+
+![](./images/info_gain.png)
