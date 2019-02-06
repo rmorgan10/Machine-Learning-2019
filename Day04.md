@@ -64,3 +64,11 @@ $$\textrm{InfoGain}(D,S) = H_D(Y) - H_D(Y|S)$$
 - By using information gain, we remove the influence of contitional entropy, so we can truly answer the question: does the split decrease the total entropy?
 
 ![](./images/info_gain.png)
+
+### Limitation of Information Gain
+
+Information gain is biased towards tests with many outcomes. For example, consider a single feature that uniquely identifies each training instance. Splitting on this feature would result in many pure branches and maximal information gain. This issue only presents itself if we allow the splits in a tree to be nonbinary.
+
+In situations with nonbinary splits, you can use the _Gain Ratio_. The Gain Ratio is a normalization of the information gain as follows:
+
+![](./images/gainratio.png)
