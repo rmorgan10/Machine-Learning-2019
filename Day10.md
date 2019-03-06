@@ -76,3 +76,13 @@ We can think of this algorithm as a look-ahead approach to the momentum algorith
 
 Here we scale the learning rate by all previous gradients, meaning arrive at new positions  in the weight space more quickly in the case of big jumps and we are able to stop more quickly when we appraoch the convergence point.
 
+**RMS Prop:**
+
+![](./images/rmsprop.png)
+
+**Adaptive Moment Estimation:** This approach is the industry standard.
+
+![](./images/adam1.png)
+
+![](./images/adam2.png)
+
