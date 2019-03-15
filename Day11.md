@@ -1,6 +1,6 @@
 # Machine Learning 
 
-## Mar. 6, 2019 
+## Mar. 6-11, 2019 
 
 ### Neural Network Architectures
 
@@ -51,4 +51,47 @@ CNNs focus on local features and try to build up global features. They are well 
 *Local Receptive Fields:* input features that are close to each other wihtin the context of the spatial layout of the entire input are grouped together. This process is illustrated below. 
 
 ![](./images/cnn1.png)
+
+*Pooling:* Each unit in a pooling layer outputs a max (or similar function) from the input layer which is typically a feature map as illustrated above.
+
+Typically you end the network with some fully collected layers to work on the features detected by the previous layers
+
+## Generative Adversarial Networks (GANs)
+
+- A Generative model takes a training set and learns to prepresnet an estimate of the distribution of training instances
+- In some applications you can use this to create new instances
+- Combine deep net (such as CNN or RNN) with adversarial training
+- One network tries to generate data to fool a second network
+- Second network tries to discriminate fake from real data
+
+Approach: Set up a zero-sum game between deep nets.
+
+- Generator: Generate data that looks like the training set
+- Discriminator: Distinguish between real and synthetic data
+
+Overview:
+
+![](./images/gan_flow.png)
+![](./images/gan_setps1.png)
+![](./images/gan_setps2.png)
+
+
+### Vanishing Gradient Problem
+If a gradient's magnitude becomes small, the weights will barely be updated, so little training will occur. For sigmoid activation functions, this can happen when there are large differences between the prediction and output.
+
+Ways to alleviate the vanishing gradient problem:
+
+- ReLU activation functions tend to outperform sigmoids in this sense because they only saturate in one direction
+- stack auto encoders to train the network layer by layer
+- sparsely connected networks (such as CNNs)
+- residual connections that skip layers
+
+
+## General Comments on Neural Nets
+
+- Many other architectures and training variants exist
+- Neural nets are very flexible in terms of how you train, structure, etc.
+- Recent advances have made neural nets very powerful (relu to handle vanishing gradients, dropout to avoid overfitting, convolutions and other archtectures attack different problems, and large datasets / hardware to enable training)
+- Another style of DNNs called Restricted Boltzmann machines (RBMs) has also been successful
+- SGD often works very well and many good models can be produced by a simpler structure
 
